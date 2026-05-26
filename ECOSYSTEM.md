@@ -270,3 +270,203 @@ The Hacker Manifesto says: *"This is our world now... the world of the electron 
 - [GhostESP-Revival/GhostESP (GPL)](https://github.com/GhostESP-Revival/GhostESP)
 - [justcallmekoko/ESP32Marauder (MIT)](https://github.com/justcallmekoko/ESP32Marauder)
 - [RockBase-iot/HaleHound-CYD (preserved history)](https://github.com/RockBase-iot/HaleHound-CYD)
+
+---
+
+## 9. New Entities Discovered
+
+### 9.1 Black Wire Militia
+
+Black Wire Militia is a **team within the Watch Dogs Go Wars (WDGWars) wardriving game**, not an independent hacking group. The game is a Polish-based ARG (Alternate Reality Game) that turns WiFi/BLE wardriving into a competitive team sport.
+
+| Detail | Value |
+|--------|-------|
+| Platform | wdgwars.pl — Watch Dogs Go Wars |
+| Team size | 138/200 members (as of May 2026) |
+| Other teams | Digital Ghost Collective (170/200), Watch Dogs OG's (68/200), Biscuits (56/200), CHAOS (7/200), and 25+ others |
+| Game type | Wardriving ARG — collect WiFi and BLE network data, upload to platform, compete for badges and team ranking |
+| Integration | Has its own Bruce firmware fork (LOCOSP/bruce-firmware-wdgwars) and Hak5 WiFi Pineapple Pager payload (LOCOSP/pineapple_pager_wdgwars) |
+| YouTuber | GhostStrats covered it: "Watch Dogs Go Wars Just Turned Wardriving Into a Real Game!" |
+
+The connection to this investigation: **WDGWars uses Bruce firmware** as its primary data collection tool. This means the Bruce firmware ecosystem directly feeds this competitive wardriving platform.
+
+### 9.2 wdgwars.pl / Watch Dogs Go Wars
+
+| Detail | Value |
+|--------|-------|
+| Website | wdgwars.pl |
+| Press kit | wdgwars.pl/press |
+| Developer | LOCOSP (also filed Bruce firmware Issue #1702 about GPS) |
+| Created | ~April 2026 |
+| Purpose | Gamified wardriving competition — "Watch Dogs Go Wars" |
+| Bruce fork | github.com/LOCOSP/bruce-firmware-wdgwars (v1.0-wdgwars, 14 stars, 3 forks) |
+| Pineapple integration | github.com/LOCOSP/pineapple_pager_wdgwars — Hak5 WiFi Pineapple Pager payload |
+| API | POST /api/upload-csv endpoint, rate limited to 30/min |
+| Badges | Hak5 Pager Op badge, team ranking, per-session statistics |
+| Upload format | WigleWifi-1.6 CSV |
+
+LOCOSP (the developer) is also a Bruce firmware user who filed issue #1702 about GPS functionality — showing this is a community member who built on top of Bruce, not an exploiter.
+
+### 9.3 Talking Saquatch (skizzophrenic)
+
+**DIRECT CONNECTION TO HALEHOUND AND VALLETECH CONFIRMED**
+
+TalkingSaquatch (GitHub: skizzophrenic, YouTube: @TalkingSasquach) is a Flipper Zero content creator who has been directly integrated into the HaleHound development circle.
+
+**Evidence of Connection:**
+
+1. **HaleHound-CYD v3.5.5 release credits** (the official GitHub release):
+   ```
+   @valleytechsolutions, @TalkingSasquach, @Notorious-Squirrel,
+   @Man-In-The-Mayhem, @Hamspiced — For the efforts and ideas that
+   created the OPSEC of the HaleHound
+   ```
+   Talking Saquatch is credited **alongside ValleyTech** as a co-contributor to HaleHound's OPSEC features.
+
+2. **ValleyTech's "Cinder Ferret V1" video** (May 21, 2026) directly shouts out:
+   - `@TalkingSasquach`
+   - `@GhostStrats`
+   - `@Hedge-Tech-95`
+   - Ham Spice from Midwest Gadgets
+   - Jesse Hail (JesseCHale)
+
+3. **ValleyTech says in the video**: "I love these developers with all my heart because this is what happens when awesome devs work together for a common cause"
+
+**Talking Saquatch's Primary Identity:**
+
+| Detail | Value |
+|--------|-------|
+| GitHub | skizzophrenic (1,882 followers) |
+| YouTube | @TalkingSasquach — Flipper Zero tutorials |
+| Website | talkingsasquach.com |
+| Primary content | Flipper Zero animations, SquachWare CFW, Evil Portal, WiFi board binaries |
+| Key repos | Talking-Sasquach (731★), Ubers-SD-Files (1,334★), SquachWare-CFW (358★) |
+| Normal role | Flipper Zero community educator and CFW developer |
+| Connection | Integrated into HaleHound inner circle alongside ValleyTech |
+
+Talking Saquatch is primarily a Flipper Zero content creator who was brought into the HaleHound development orbit. Their involvement with OPSEC features for HaleHound is notable because their audience is primarily Flipper Zero users — meaning HaleHound is being cross-promoted into the Flipper community through this connection.
+
+### 9.4 GhostStrats (YouTuber)
+
+GhostStrats covered both:
+- WDGWars wardriving game
+- Connected to ValleyTech's ecosystem (shouted out in Cinder Ferret video)
+
+This creates a triangle: **ValleyTech → GhostStrats → WDGWars** — with all three connected through the same YouTube/content creator ecosystem.
+
+### 9.5 Midwest Gadgets (Ham Spice)
+
+Referenced by ValleyTech as the hardware partner who co-designed the Cinder Ferret board for HaleHound:
+> "Ham Spice from Midwest Gadgets and Jesse Hail have teamed up to produce something pretty cool"
+
+This makes Midwest Gadgets a hardware fabrication partner for HaleHound — they're manufacturing the companion boards for ESP32-DIV-derived HaleHound firmware.
+
+---
+
+## 10. Updated Network Map
+
+```
+                  ┌──────────────────────────────────┐
+                  │       JesseCHale (JMFH)          │
+                  │       HaleHound-CYD              │
+                  │       Proprietary firmware        │
+                  └──────────┬───────────┬───────────┘
+                             │           │
+              ┌──────────────┘           └──────────────┐
+              ▼                                         ▼
+   ┌──────────────────────┐              ┌─────────────────────┐
+   │  ValleyTech           │              │  Midwest Gadgets    │
+   │  (Khalil Alarqawi)    │              │  (Ham Spice)        │
+   │  Springfield, VA      │              │  Hardware mfr       │
+   │  96K YouTube          │              │  Cinder Ferret board│
+   │  Promotes HaleHound   │              └─────────────────────┘
+   │  Sells RF Reaper      │
+   │  Shills "dual core"   │
+   └───────┬───────────────┘
+           │                                ┌─────────────────────┐
+           ├────────────────────────────────┤  Talking Saquatch   │
+           │                                │  (skizzophrenic)    │
+           │                                │  Flipper Zero YouTuber
+           │                                │  Credited in Hale- │
+           │                                │  Hound v3.5.5      │
+           │                                │  OPSEC collaborator │
+           │                                └─────────────────────┘
+           │
+           ├────────────────────────────────┐
+           │                                ▼
+           │                     ┌─────────────────────┐
+           │                     │  GhostStrats         │
+           │                     │  YouTuber            │
+           │                     │  Covers WDGWars      │
+           │                     │  Connected to VT     │
+           │                     └─────────────────────┘
+           │
+           ▼
+   ┌──────────────────────┐
+   │  WDGWars.pl           │
+   │  Watch Dogs Go Wars   │
+   │  Polish wardriving ARG│
+   │  Uses Bruce firmware  │
+   │  Teams:               │
+   │   Black Wire Militia  │
+   │   Digital Ghost Coll. │
+   │   Watch Dogs OG's     │
+   │   +25 others          │
+   └──────────────────────┘
+```
+
+---
+
+## 11. Cross-Promotion Pipeline
+
+The network functions as a cross-promotion machine across multiple communities:
+
+```
+HaleHound-CYD (JesseCHale)
+  ↘ Promoted by ValleyTech (96K subs) — brings YouTube audience
+    ↘ Promoted by Talking Saquatch (Flipper audience) — brings Flipper community
+      ↘ Promoted by GhostStrats — brings wardriving/gaming audience
+        ↘ Hardware made by Midwest Gadgets (Ham Spice)
+          ↘ Sold through ValleyTech's Shopify
+            ↘ Data uploaded to WDGWars for gamification
+              ↘ Participation through Bruce firmware forks
+```
+
+Everyone in this network benefits from each other's audiences and platforms. The "open-source community" rhetoric masks what is essentially a closed commercial ecosystem where:
+- CiferTech (ESP32-DIV original creator) gets nothing
+- justcallmekoko (ESP32 Marauder) gets nothing
+- pr3y (Bruce firmware) gets recognition but no hardware revenue
+- The people **selling** and **cross-promoting** capture all the value
+
+---
+
+## 12. What Clean Looks Like (Comparison)
+
+Compare this network with how healthy open-source projects operate:
+
+| Aspect | HaleHound Network | GhostESP Ecosystem |
+|--------|------------------|-------------------|
+| Attribution | Missing/attacked | Credits all upstream |
+| License | Proprietary (was MIT) | GPL-3.0 |
+| Source | Closed | Open |
+| Hardware partners | ValleyTech (cross-promotion) | Rabbit Labs, Wired Hatters (transparent) |
+| Money flow | All to resellers | Partial to hardware makers, credit to devs |
+| Community response to criticism | Hidden insults, block critics | Open issues, public discussion |
+
+---
+
+## 13. Person Directory (Updated)
+
+| Person | Role | Status in Network |
+|--------|------|-------------------|
+| **Khalil Alarqawi/Yasin** | Owner, ValleyTech Custom Solutions | **Core orchestator / commercial node** |
+| **JesseCHale (JMFH)** | Creator, HaleHound-CYD | **Core developer** |
+| **Talking Saquatch (skizzophrenic)** | Flipper Zero YouTuber, OPSEC collaborator | **Cross-promotion partner** |
+| **Ham Spice (Midwest Gadgets)** | Hardware designer, Cinder Ferret | **Hardware partner** |
+| **GhostStrats** | YouTuber, covers WDGWars | **Cross-promotion partner** |
+| **LOCOSP** | Developer, WDGWars platform | **Adjacent (Bruce ecosystem)** |
+| **Cifer (cifertech)** | Creator, ESP32-DIV | **Victim (no credit)** |
+| **Illya (Arch Labs)** | 15-year-old independent seller | **Victim (lost $2,080)** |
+| **pr3y** | Creator, Bruce firmware | **Adjacent (source of Bruce forks)** |
+| **Smoochiee** | Designer, RF Reaper PCB | **Adjacent (design exploited by VT)** |
+| **r13xr13** | Investigator | **Blackballed from community** |
