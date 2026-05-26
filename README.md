@@ -22,7 +22,7 @@ Illya trusted him. He spent $865 on the order, plus $60 shipping and $130 tariff
 
 What arrived was not what was advertised. The boards came as bare PCBs: no battery, no GPS module, no CC1101 radio, no screen, no antennas, no SMA connectors. The single most expensive component on the board -- the CC1101 module -- was not included.
 
-Elecrow offered Illya a $75 refund. Seventy-five dollars on an order that cost well over a thousand. That would not even cover one CC1101 module.
+Elecrow offered Illya a $75 refund. Seventy-five dollars on an order that cost well over a thousand. That would not even cover board.
 
 Illya had to spend his own money to finish the boards he already paid for. Each Reaper ended up costing him $110 in parts alone, not counting his labor. Meanwhile, ValleyTech was out promoting the same device for $80 from their own store.
 
