@@ -292,3 +292,24 @@ The only thing necessary for the triumph of evil is for good people to do nothin
 *For questions, evidence submissions, or corrections: open an issue or PR on this repository.*
 
 *If you are Illya and want changes or removal of any details: contact me and I will comply immediately.*
+
+---
+
+## Appendix A: Evidence Index
+
+All evidence was gathered from public sources only. See [EVIDENCE.md](./EVIDENCE.md) for the full collection with URLs.
+
+### Quick Reference
+
+| Evidence | Location |
+|----------|----------|
+| Shopify store products & prices | EVIDENCE.md §1 |
+| Elecrow partner store listing | EVIDENCE.md §2 |
+| Official Bruce RF Reaper listing ($80) | EVIDENCE.md §3 |
+| YouTube channel stats & description | EVIDENCE.md §4 |
+| GitHub profile & repos | EVIDENCE.md §5 |
+| Nextdoor business page (owner name, address, phone) | EVIDENCE.md §6 |
+| TikTok account | EVIDENCE.md §7 |
+| Wayback Machine (no history) | EVIDENCE.md §8 |
+| RF Reaper original designer (Smoochiee) | EVIDENCE.md §9 |
+| Illya's Arch Labs video & store | EVIDENCE.md §10 |
